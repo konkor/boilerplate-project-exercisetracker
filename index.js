@@ -141,7 +141,7 @@ app.get ('/api/users', function(req, res) {
 app.post ('/api/users/:_id/exercises', function(req, res) {
   let exercise = {
     description: req.body.description,
-    duration: req.body.duration,
+    duration: parseInt(req.body.duration),
     date: req.body.date || new Date()
   };
   addExercise (req.params._id, exercise, (err, data) => {
